@@ -1,12 +1,11 @@
 const nameIn = document.querySelector('#name-input');
 const greeting = document.querySelector('#name-output');
 
-nameIn.addEventListener('input', onInput);
-
-function onInput(event) {
-
-    event.currentTarget.value ?
-        greeting.textContent = event.currentTarget.value :
-        greeting.textContent = 'Незнакомец'
+const onInput = (event) => {
+    const eventValue = event.currentTarget.value;
+    eventValue ?
+        greeting.textContent = eventValue :
+        greeting.textContent = 'Незнакомец';
 
 };
+nameIn.addEventListener('input', onInput);

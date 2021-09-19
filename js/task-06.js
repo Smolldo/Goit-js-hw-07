@@ -2,8 +2,11 @@ const valInput = document.querySelector('#validation-input');
 
 
 const onInputBlur = (event) => {
-event.currentTarget.value.length !== Number(valInput.dataset.length) ?
-toggle('invalid', 'valid') : toggle('valid', 'invalid');
+let eventLength = event.currentTarget.value.length;
+
+let currentLength = Number(valInput.dataset.length);
+
+ eventLength !==  currentLength ? toggle('invalid', 'valid') : toggle('valid', 'invalid');
 }
 
 valInput.addEventListener('blur', onInputBlur);
